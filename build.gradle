@@ -20,6 +20,13 @@ apply plugin: 'kotlin-jpa'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'kotlin-allopen'
+
+allOpen {
+	annotation("javax.persistence.Entity")
+	annotation("javax.persistence.MappedSuperclass")
+	annotation("javax.persistence.Embeddable")
+}
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'

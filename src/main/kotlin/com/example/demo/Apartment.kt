@@ -9,7 +9,17 @@ import javax.persistence.ManyToOne
 class Apartment(
         @Id
         private val id: String,
-        private val heading: String,
-        @ManyToOne(fetch = LAZY)
-        private val building: Building
-)
+        heading: String,
+        @ManyToOne(fetch = LAZY) val building: Building
+) {
+
+        var heading: String = heading
+                private set
+
+        fun updateApartment(heading: String) {
+                // Check this and that
+                // Yada yada
+
+                this.heading = heading
+        }
+}
